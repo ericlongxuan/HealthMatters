@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.dartmouth.cs.healthmatters">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <application
+        android:name="edu.dartmouth.cs.healthmatters.AndroidProximityKitReferenceApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <!-- <activity android:name=".MainActivity" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.facebook.FacebookActivity" -->
+        <!-- android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" /> -->
+
+
+        <!-- <provider -->
+        <!-- android:name="com.facebook.FacebookContentProvider" -->
+        <!-- android:authorities="com.facebook.app.FacebookContentProvider1074522955947782" -->
+        <!-- android:exported="true" /> -->
+
+        <activity android:name=".Share" />
+        <activity
+            android:name=".SelfAffirm"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LandingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignInActivity" />
+        <activity
+            android:name=".PollActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PollResponseActivity"
+            android:screenOrientation="portrait"/>
+        <receiver
+            android:name=".StartMyServiceAtBootReceiver"
+            android:label="StartMyServiceAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".BeaconMonitor"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.dartmouth.cs.healthmatters.PollResponseActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Text"
+                android:id="@+id/tvFeedback"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:weightSum="3"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/pshare"
+            android:src="@drawable/share"
+            android:background="#0000"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/plike"
+            android:src="@drawable/thumbs"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:scaleType="fitCenter"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/pdislike"
+            android:src="@drawable/thumbs2"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:scaleType="fitCenter"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>
